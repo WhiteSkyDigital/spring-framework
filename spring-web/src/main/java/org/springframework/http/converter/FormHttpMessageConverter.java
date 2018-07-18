@@ -493,10 +493,9 @@ public class FormHttpMessageConverter implements HttpMessageConverter<MultiValue
 
 		private byte[] getAsciiBytes(String name) {
 			try {
-				return name.getBytes("US-ASCII");
+				return name.getBytes("UTF-8");
 			}
 			catch (UnsupportedEncodingException ex) {
-				// Should not happen - US-ASCII is always supported.
 				throw new IllegalStateException(ex);
 			}
 		}
